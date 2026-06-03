@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+:root {
+    /* Color variables */
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+
+    /* Fontweight variables */
+    --light: 400;
+    --medium: 600;
+    --bold: 700;
+
+    /* Fontfamily variables */
+    --young: "Young Serif", serif;
+    --outfit: "Outfit", sans-serif;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    padding: 100px;
+    background-color: var(--stone-100);
+    font-family: var(--outfit);
+    font-size: 1rem;
+    color: var(--stone-600)
+}
+
+h1 {
+    font-family: var(--young);
+    color: var(--stone-900);
+}
+
+ol,
+ul {
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.card {
+    width: 750px;
+    background-color: var(--white);
+    margin-inline: auto;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.picture {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main h3 {
+    color: var(--rose-800);
+    margin-bottom: 20px;
+}
+
+.main p {
+    line-height: 1.5;
+}
+
+.main div {
+    background-color: var(--rose-50);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.heading {
+    font-family: var(--young);
+    color: var(--brown-800);
+    margin-bottom: 20px;
+}
+
+.method {
+    font-weight: var(--bold);
+}
+
+.section {
+    border-bottom: 2px solid var(--stone-150);
+    padding-bottom: 30px;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width: 500px) {
+    body {
+        padding: 0;
+    }
+
+    .card {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .picture {
+        border-radius: 0;
+    }
+
+    .section, .main {
+        margin: 30px;
+    }
+}
