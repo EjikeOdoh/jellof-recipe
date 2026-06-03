@@ -2,6 +2,8 @@ import Heading from "./components/Heading";
 
 import './App.css'
 import JellofRice from './assets/jellof-rice.jpeg'
+import ListItem from "./components/ListItem";
+import ListItemBold from "./components/ListItemBold";
 
 const ingredients = [
   "4 large red bell peppers(tatashe), deseeded",
@@ -28,29 +30,42 @@ const instructions = [
     description: "Blend the red bell peppers, tomatoes, Scotch bonnets, 2 onions, garlic, and ginger with as little water as possible until perfectly smooth. Pour the mix into a pot and boil it down on medium-high heat until it reduces to a thick paste and the excess water evaporates."
   },
   {
-    title: "Fry the Aromatics and Tomato Paste(15 mins)",
+    title: "Fry the Aromatics and Tomato Paste (15 mins)",
     description: "Heat the vegetable oil in a large, heavy-bottomed pot over medium heat. Add the sliced onions and fry for about 3 to 5 minutes until translucent. Add the tomato paste and fry it continuously for 5 to 7 minutes. Crucial step: It needs to darken slightly and lose its sour taste."
   },
   {
-    title: "Build the Stew Base(10 mins)",
+    title: "Build the Stew Base (10 mins)",
     description: "Pour your boiled-down pepper blend into the fried tomato paste. Stir well to combine. Add the bay leaves, curry powder, thyme, bouillon cubes, and a pinch of salt. Cover and let it fry on medium-low heat until the oil separates and floats to the top."
   },
   {
-    title: "Parboil and Wash the Rice(5 mins)",
+    title: "Parboil and Wash the Rice (5 mins)",
     description: "While the sauce is frying, rinse your rice thoroughly with warm water multiple times to wash away excess surface starch. This prevents the Jollof from becoming sticky or mushy. Drain completely."
   },
   {
-    title: "Combine and Steam(30-40 mins)",
+    title: "Combine and Steam (30-40 mins)",
     description: "Pour the meat stock into the fried sauce and bring it to a simmer. Taste the liquid—it should taste slightly over-seasoned, as the rice will absorb a lot of flavor. Stir in the washed rice. The liquid should just barely cover the rice.Cover the pot tightly with aluminum foil, then put the lid on top to trap the steam. Turn the heat down to low. Let it cook for 30 minutes without opening it."
   },
   {
-    title: "The Final Toss & Smokiness(5 mins)",
+    title: "The Final Toss & Smokiness (5 mins)",
     description: "Open the pot and check the texture. If the rice needs a bit more cooking, leave it for another 5 to 10 minutes. Let the bottom burn just a tiny bit—this gives it that signature smoky party flavor. Stir in a tablespoon of butter and some fresh sliced onions or tomatoes if you like, fluff it with a wooden spoon or fork, and turn off the heat."
   }
 ];
 
 
 function App() {
+
+  const ingredientsList = ingredients.map((x) => {
+    return <ListItem item={x} />
+  })
+
+  const instructionsList = instructions.map((y) => {
+    return (
+      <ListItemBold
+        title={y.title}
+        desc={y.description}
+      />)
+  })
+
   return (
     <main>
       <div className="card">
@@ -65,11 +80,22 @@ function App() {
           <p>A vibrant, deeply flavorful West African classic featuring long-grain rice infused with a rich, smoky tomato-and-pepper base, aromatic curry and thyme, and perfectly steamed to a legendary golden-red finish.</p>
         </div>
 
-        <div className="section"></div>
+        <div className="section">
+          <Heading heading={"Ingredients"} />
+          <ul>
+            {ingredientsList}
+          </ul>
+        </div>
 
-        <div className="section"></div>
+        <div className="section">
+          <Heading heading={"Instructions"} />
+          <ol>
+            {instructionsList}
+          </ol>
+        </div>
 
       </div>
+  
     </main>
   )
 }

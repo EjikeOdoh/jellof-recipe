@@ -1,7 +1,7 @@
 
-function Heading({text}) {
+function Heading({heading}) {
     return (
-        <h2 className="heading">{text}</h2>
+        <h2 className="heading">{heading}</h2>
     )
 }
 
